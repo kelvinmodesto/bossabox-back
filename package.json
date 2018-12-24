@@ -1,0 +1,58 @@
+{
+  "name": "bossabox-back",
+  "description": "A boilerplate application for building REST APIs using express, mongoose in ES6 with TDD",
+  "version": "0.0.1",
+  "private": false,
+  "engines": {
+    "node": ">=8.10.0",
+    "npm": ">=5.6.0",
+    "yarn": ">=1.12"
+  },
+  "main": "./app.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "lint": "./node_modules/.bin/eslint . --ext .js",
+    "lint:init": "./node_modules/.bin/eslint --init"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.7",
+    "nyc": "^13.1.0",
+    "sinon": "^7.1.1",
+    "supertest": "^3.3.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "express",
+    "node.js",
+    "boilerplate",
+    "es6",
+    "airbnb",
+    "API",
+    "REST",
+    "web",
+    "router"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kelvinmodesto/zb-api.git"
+  },
+  "contributors": [
+    "Kelvin Modesto <km.modesto@gmail.com>"
+  ],
+  "author": "Kelvin Modesto <km.modesto@gmail.com>"
+}
