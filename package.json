@@ -49,7 +49,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:kelvinmodesto/zb-api.git"
+    "url": "git@github.com:kelvinmodesto/bossabox-back.git"
   },
   "contributors": [
     "Kelvin Modesto <km.modesto@gmail.com>"
