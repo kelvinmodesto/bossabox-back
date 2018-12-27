@@ -1,8 +1,8 @@
-const express = require('express');
+const mongo = require('../db/strategies/mongoDbStrategy');
+const { ToolModel } = require('../models/toolModel');
 
-const routersInit = (config) => {
-  const router = express();
-  router.use('/list', null, { config });
-};
+const toolModel = new ToolModel('tools', mongo);
 
-module.exports = routersInit;
+console.log(toolModel.schema);
+
+module.exports = toolModel;

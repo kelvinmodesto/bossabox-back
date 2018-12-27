@@ -1,4 +1,4 @@
-const { NotImplementedException } = require('../../../utils/exception/NotImplementedException');
+const NotImplementedException = require('../../../utils/exception/NotImplementedException');
 
 class IDb {
   create(item) {

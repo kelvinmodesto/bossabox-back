@@ -1,4 +1,4 @@
-const { IDb } = require('./base/IDb');
+const IDb = require('./base/IDb');
 
 class MongoDBStrategy extends IDb {
   constructor() {
@@ -6,7 +6,23 @@ class MongoDBStrategy extends IDb {
   }
 
   create(item) {
-    return `MongoDB ${item}`;
+    return `MongoDB read ${item}`;
+  }
+
+  read(item) {
+    return `MongoDB read ${item}`;
+  }
+
+  update(id, item) {
+    return `MongoDB update ${id}: ${item}`;
+  }
+
+  delete(id) {
+    return `MongoDB delete ${id}`;
+  }
+
+  isConnected(id) {
+    return `MongoDB isConnected ${id}`;
   }
 }
 
