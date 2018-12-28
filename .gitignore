@@ -85,3 +85,6 @@ deploy.sh
 
 # Jetbrains folder
 .idea/
+
+# Docker scripts
+mongo.sh
