@@ -1,8 +1,11 @@
-const IDb = require('./base/IDb');
+const mongoose = require('mongoose');
+const ContextStrategy = require('./base/contextStrategy');
 
-class MongoDBStrategy extends IDb {
-  constructor() {
-    super('MongoDB');
+class MongoDBStrategy extends ContextStrategy {
+  constructor(schema, collection) {
+    super(mongoose);
+    this.schema = schema;
+    this.collection = collection;
   }
 
   create(item) {
@@ -13,7 +16,7 @@ class MongoDBStrategy extends IDb {
     return `MongoDB read ${item}`;
   }
 
-  update(id, item) {
+  update(item) {
     return `MongoDB update ${id}: ${item}`;
   }
 

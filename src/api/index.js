@@ -1,17 +1,23 @@
 const mongoose = require('mongoose');
 
-// const mongo = require('../db/strategies/mongoDbStrategy');
-const ToolModel = require('../models/ToolModel');
+const Mongo = require('../db/strategies/mongoDbStrategy');
+const ToolModel = require('../models/tools.model');
+const ToolsController = require('../controllers/tools.controller');
 
-mongoose.connect('mongodb://admin:admin@localhost:27017/admin', { useNewUrlParser: true });
+const STR_CONNECTION = 'mongodb://admin:admin@localhost:27017/admin';
 
-const toolModel = new ToolModel('Tool',
-  new mongoose.Schema({
-    id: Number,
-    title: String,
-    link: String,
-    description: String,
-    tags: [String],
-  }), 'tools', mongoose);
+mongoose.connect(STR_CONNECTION, { useNewUrlParser: true });
 
-module.exports = toolModel;
+const toolsAPI = new ToolsController(
+  new ToolModel('Tool',
+    new mongoose.Schema({
+      id: Number,
+      title: String,
+      link: String,
+      description: String,
+      tags: [String],
+    }), 'tools', mongoose),
+  new Mongo(),
+);
+
+module.exports = toolsAPI;
