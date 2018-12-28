@@ -87,4 +87,4 @@ deploy.sh
 .idea/
 
 # Docker scripts
-mongo.sh
+./mongo.sh
