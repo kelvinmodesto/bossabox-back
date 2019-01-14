@@ -1,4 +1,3 @@
 ./src/db/strategies/base/IDb.js
-./src/models/IModel.js
 ./node_modules/**/*.js
 ./bin/www
