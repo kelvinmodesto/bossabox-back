@@ -3,8 +3,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
-const toolsRouter = require('./routes/tools');
+const api = require('./src/api');
 
 const app = express();
 
@@ -14,8 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', indexRouter);
-app.use('/tools', toolsRouter);
+app.use('/', api());
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
