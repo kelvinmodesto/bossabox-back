@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const schema = mongoose.schema({
+const schema = mongoose.Schema({
   id: {
     type: Number,
     required: true,
