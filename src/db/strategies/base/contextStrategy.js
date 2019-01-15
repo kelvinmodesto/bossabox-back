@@ -1,4 +1,4 @@
-const { IDb } = require('./IDb');
+const IDb = require('./IDb');
 
 class ContextStrategy extends IDb {
   constructor(database) {

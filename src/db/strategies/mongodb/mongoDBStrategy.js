@@ -37,6 +37,7 @@ class MongoDBStrategy extends ContextStrategy {
 
   static connect() {
     mongoose.connect(STR_CONNECTION, { userNewUrlParser: true });
+    return mongoose.connection;
   }
 }
 
