@@ -1,3 +1,8 @@
 module.exports = {
-  "extends": "airbnb-base"
+  extends: "airbnb-base",
+  env: {
+    node: true,
+    mongo: true,
+    mocha: true
+  }
 };
