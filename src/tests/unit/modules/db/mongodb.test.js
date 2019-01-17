@@ -1,4 +1,6 @@
-const { assert, expect } = require('chai');
+const { describe } = require('mocha');
+const { expect } = require('chai');
+const sinon = require('sinon');
 
 const Context = require('../../../../db/strategies/base/contextStrategy');
 const MongoDB = require('../../../../db/strategies/mongodb/mongoDBStrategy');
@@ -7,10 +9,26 @@ const { Tool } = require('../../../../models/tool');
 let context = {};
 describe('MongoDB Test Suit', function init() {
   this.beforeAll(async () => {
-    const connection = MongoDB.connect();
-    context = new Context(new MongoDB(connection, Tool));
+    context = new Context(new MongoDB(MongoDB.connect(), Tool));
   });
+
   it('Verify connection', async () => {
     expect(await context.isConnected()).to.be.equal(1);
+  });
+
+  it('Create item', async () => {
+    expect(1).to.be.equal(1);
+  });
+
+  it('Read item', async () => {
+    expect(1).to.be.equal(1);
+  });
+
+  it('Update item', async () => {
+    expect(1).to.be.equal(1);
+  });
+
+  it('Delete item', async () => {
+    expect(1).to.be.equal(1);
   });
 });
