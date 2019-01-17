@@ -1,4 +1,4 @@
-const IDb = require('./IDb');
+const IDb = require('./db.interface');
 
 class ContextStrategy extends IDb {
   constructor(database) {
@@ -20,6 +20,14 @@ class ContextStrategy extends IDb {
 
   delete(id) {
     return this.database.delete(id);
+  }
+
+  isConnected() {
+    return this.database.isConnected();
+  }
+
+  connect() {
+    return this.database.connect();
   }
 }
 
