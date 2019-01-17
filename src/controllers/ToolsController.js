@@ -11,18 +11,20 @@ class ToolsController {
     this.listTools();
     this.deleteTool();
     this.createTool();
-    return this.routes;
+    return this.router;
   }
 
   listTools() {
     this.router.get('/tools', async (req, res, next) => {
       try {
-        const list = await this.context.read({ });
+        const { link, description, title } = req.query;
+        const list = await this.context.read({ link, description, title });
         let result = list;
         if (req.query.tags) {
-          result = list.filter((item) => {
-            return
-          });
+          result = list.filter(item => item.tags.reduce(
+            (acc, elem) => ((acc === true) || (acc === req.query.tags))
+              || (elem === req.query.tags),
+          ));
         }
         if (res.status(200)) {
           res.send({ result });
