@@ -11,7 +11,7 @@
   "main": "./app.js",
   "scripts": {
     "start": "node ./bin/www",
-    "lint": "./node_modules/.bin/eslint -c . --ext .js",
+    "lint": "./node_modules/.bin/eslint --ext .js",
     "lint:init": "./node_modules/.bin/eslint --init",
     "test": "mocha src/tests/**/*.test.js",
     "test:watch": "mocha -w src/tests/**/*.test.js"
