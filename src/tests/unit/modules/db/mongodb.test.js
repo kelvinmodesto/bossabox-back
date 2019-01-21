@@ -6,6 +6,10 @@ const Context = require('../../../../db/strategies/base/contextStrategy');
 const MongoDB = require('../../../../db/strategies/mongodb/mongoDBStrategy');
 const { Tool } = require('../../../../models/tool');
 
+const MOCK_TOOLS_CREATE = {
+
+};
+
 let context = {};
 describe('MongoDB Test Suit', function init() {
   this.beforeAll(async () => {
@@ -17,6 +21,7 @@ describe('MongoDB Test Suit', function init() {
   });
 
   it('Create item', async () => {
+    const { id, description, link, title, tags } = context.create();
     expect(1).to.be.equal(1);
   });
 

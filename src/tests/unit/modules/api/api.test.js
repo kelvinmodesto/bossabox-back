@@ -1,6 +1,7 @@
 const { describe } = require('mocha');
 const { expect } = require('chai');
 const sinon = require('sinon');
+const request = require('supertest');
 
 const api = require('../../../../api');
 // let xhr = {};
