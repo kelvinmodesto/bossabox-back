@@ -6,7 +6,7 @@ class ContextStrategy extends IDb {
     this.database = database;
   }
 
-  create(item) {
+  create(item = {}) {
     return this.database.create(item);
   }
 
