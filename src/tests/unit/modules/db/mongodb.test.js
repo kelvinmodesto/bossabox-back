@@ -22,7 +22,7 @@ const MOCK_CREATE_TOOL = {
 let context = {};
 describe('MongoDB Test Suit', function init() {
   this.beforeAll(async () => {
-    context = new Context(new MongoDB(MongoDB.connect(), Tool));
+    context = await new Context(new MongoDB(MongoDB.connect(), Tool));
   });
 
   it('Verify connection', async () => {
@@ -37,6 +37,7 @@ describe('MongoDB Test Suit', function init() {
       tags,
     } = await context.create(MOCK_CREATE_TOOL);
 
+    expect(tags).to.have.same.members(MOCK_CREATE_TOOL.tags);
     expect({
       title,
       link,
