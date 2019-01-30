@@ -13,10 +13,10 @@ const schema = mongoose.Schema({
     type: String,
     required: true,
   },
-  tags: {
-    type: [String],
+  tags: [{
+    type: String,
     required: true,
-  },
+  }],
   insertedAt: {
     type: Date,
     default: new Date(),
