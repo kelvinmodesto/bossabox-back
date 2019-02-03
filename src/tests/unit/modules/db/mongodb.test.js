@@ -36,14 +36,12 @@ describe('MongoDB Test Suit', function init() {
       description,
       tags,
     } = await context.create(MOCK_CREATE_TOOL);
-
-    expect(tags).to.have.same.members(MOCK_CREATE_TOOL.tags);
-    expect({
+    expect([{
       title,
       link,
       description,
       tags,
-    }).to.be.equal(MOCK_CREATE_TOOL);
+    }]).to.have.deep.members([MOCK_CREATE_TOOL]);
   });
 
   it('Read item', async () => {
