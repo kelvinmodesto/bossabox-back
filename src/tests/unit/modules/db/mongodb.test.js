@@ -45,7 +45,18 @@ describe('MongoDB Test Suit', function init() {
   });
 
   it('Read item', async () => {
-    expect(1).to.be.equal(1);
+    const [{
+      title,
+      link,
+      description,
+      tags,
+    }] = await context.read(MOCK_CREATE_TOOL);
+    expect([{
+      title,
+      link,
+      description,
+      tags,
+    }]).to.have.deep.members([MOCK_CREATE_TOOL]);
   });
 
   it('Update item', async () => {
