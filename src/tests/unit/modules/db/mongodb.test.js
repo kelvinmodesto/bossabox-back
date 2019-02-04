@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const { describe } = require('mocha');
 const { expect } = require('chai');
 
@@ -19,14 +20,34 @@ const MOCK_CREATE_TOOL = {
   ],
 };
 
+const MOCK_UPDATE_TOOL = {
+  title: 'fastify',
+  link: 'https://www.fastify.io/',
+  description: 'Extremely fast and simple, low-overhead web framework for NodeJS. Supports HTTP2.',
+  tags: [
+    'web',
+    'framework',
+    'node',
+    'http2',
+    'https',
+    'localhost',
+  ],
+};
+
+let MOCK_TOOL_ID = '';
 let context = {};
 describe('MongoDB Test Suit', function init() {
   this.beforeAll(async () => {
     context = await new Context(new MongoDB(MongoDB.connect(), Tool));
+    const tool = await context.create(MOCK_UPDATE_TOOL);
+    MOCK_TOOL_ID = tool._id;
   });
 
   it('Verify connection', async () => {
-    expect(await context.isConnected()).to.be.equal(1);
+    expect(await context.isConnected())
+      .to
+      .be
+      .equal(1);
   });
 
   it('Create item', async () => {
@@ -41,7 +62,11 @@ describe('MongoDB Test Suit', function init() {
       link,
       description,
       tags,
-    }]).to.have.deep.members([MOCK_CREATE_TOOL]);
+    }])
+      .to
+      .have
+      .deep
+      .members([MOCK_CREATE_TOOL]);
   });
 
   it('Read item', async () => {
@@ -56,14 +81,27 @@ describe('MongoDB Test Suit', function init() {
       link,
       description,
       tags,
-    }]).to.have.deep.members([MOCK_CREATE_TOOL]);
+    }])
+      .to
+      .have
+      .deep
+      .members([MOCK_CREATE_TOOL]);
   });
 
   it('Update item', async () => {
-    expect(1).to.be.equal(1);
+    const result = await context.update(MOCK_TOOL_ID, {
+      link: 'https://nodejs.org/en/',
+    });
+    expect(result.nModified)
+      .to
+      .be
+      .equal(1);
   });
 
   it('Delete item', async () => {
-    expect(1).to.be.equal(1);
+    expect(1)
+      .to
+      .be
+      .equal(1);
   });
 });
