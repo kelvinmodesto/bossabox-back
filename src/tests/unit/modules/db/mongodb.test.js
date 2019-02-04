@@ -99,7 +99,8 @@ describe('MongoDB Test Suit', function init() {
   });
 
   it('Delete item', async () => {
-    expect(1)
+    const result = await context.delete(MOCK_TOOL_ID);
+    expect(result.n)
       .to
       .be
       .equal(1);
