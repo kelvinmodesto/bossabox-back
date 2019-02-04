@@ -89,18 +89,18 @@ describe('MongoDB Test Suit', function init() {
   });
 
   it('Update item', async () => {
-    const result = await context.update(MOCK_TOOL_ID, {
+    const res = await context.update(MOCK_TOOL_ID, {
       link: 'https://nodejs.org/en/',
     });
-    expect(result.nModified)
+    expect(res.nModified)
       .to
       .be
       .equal(1);
   });
 
   it('Delete item', async () => {
-    const result = await context.delete(MOCK_TOOL_ID);
-    expect(result.n)
+    const res = await context.delete(MOCK_TOOL_ID);
+    expect(res.n)
       .to
       .be
       .equal(1);
