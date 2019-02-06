@@ -65,7 +65,7 @@ class ToolsController {
   }
 
   deleteTool() {
-    this.router.delete('tools/:id', async (req, res, next) => {
+    this.router.delete('/tools/:id', async (req, res, next) => {
       try {
         const { n } = await this.context.delete(req.id);
         if (n === 1) {

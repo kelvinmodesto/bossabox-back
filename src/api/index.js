@@ -12,7 +12,7 @@ const { Tool } = require('../models/tool');
 // Put all models in a single object
 const models = { Tool };
 
-const context = new Context(MongoDB.connect(), models.Tool);
+const context = new Context(new MongoDB(MongoDB.connect(), models.Tool));
 const routersInit = () => {
   const toolsController = new ToolsController(Router(), context);
 
