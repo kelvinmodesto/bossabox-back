@@ -1,66 +1,70 @@
 const { describe } = require('mocha');
-const { expect } = require('chai');
-const sinon = require('sinon');
-const request = require('supertest');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
 
-const api = require('../../../../api');
-// let xhr = {};
-// let requests = {};
-describe('API Test Suit', function init() {
+const app = require('../../../../../app');
+
+chai.use(chaiHttp);
+
+describe.only('API Test Suit', function init() {
   this.beforeAll(async () => {
-    // xhr = sinon.useFakeXMLHttpRequest();
-    // requests = [];
   });
 
   it('API is listening the port 3000', async () => {
-    expect(1).to.be.equal(1);
+    chai.expect(1).to.be.equal(1);
   });
 
   it('list all tools, without params', async () => {
-    expect(1).to.be.equal(1);
+    chai.request(app)
+      .get('/tools')
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('array');
+        res.body.length.should.be.eql(0);
+      });
   });
 
   it('filter tools with params', async () => {
-    expect(1).to.be.equal(1);
+    chai.expect(1).to.be.equal(1);
   });
 
   it('filter tools with tags params', async () => {
-    expect(1).to.be.equal(1);
+    chai.expect(1).to.be.equal(1);
   });
 
   it('filter tools with all params', async () => {
-    expect(1).to.be.equal(1);
+    chai.expect(1).to.be.equal(1);
   });
 
   it('filter tools with a invalid param', async () => {
-    expect(1).to.be.equal(1);
+    chai.expect(1).to.be.equal(1);
   });
 
   it('create tool', async () => {
-    expect(1).to.be.equal(1);
+    chai.expect(1).to.be.equal(1);
   });
 
   it('create a invalid tool', async () => {
-    expect(1).to.be.equal(1);
+    chai.expect(1).to.be.equal(1);
   });
 
   it('create a empty tool', async () => {
-    expect(1).to.be.equal(1);
+    chai.expect(1).to.be.equal(1);
   });
 
   it('delete tool', async () => {
-    expect(1).to.be.equal(1);
+    chai.expect(1).to.be.equal(1);
   });
 
   it('delete a inexistent tool', async () => {
-    expect(1).to.be.equal(1);
+    chai.expect(1).to.be.equal(1);
   });
 
   it('delete a invalid tool', async () => {
-    expect(1).to.be.equal(1);
+    chai.expect(1).to.be.equal(1);
   });
 
   it('update a tool', async () => {
-    expect(1).to.be.equal(1);
+    chai.expect(1).to.be.equal(1);
   });
 });
