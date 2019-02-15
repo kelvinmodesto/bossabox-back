@@ -4,6 +4,8 @@ const chaiHttp = require('chai-http');
 
 const app = require('../../../../../app');
 
+const { expect } = chai;
+
 const MOCK_CREATE_TOOL = {
   title: 'json-server',
   link: 'https://github.com/typicode/json-server',
@@ -31,9 +33,8 @@ describe('API Test Suit', function init() {
     chai.request(app)
       .get('/tools')
       .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('array');
-        res.body.length.should.be.eql(0);
+        expect([res.body]).to.be.a('array');
+        expect(res.status).to.be.deep.equal(200);
       });
   });
   it('/POST tools', async () => {
