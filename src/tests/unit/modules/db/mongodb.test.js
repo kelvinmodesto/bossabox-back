@@ -36,7 +36,7 @@ const MOCK_UPDATE_TOOL = {
 
 let MOCK_TOOL_ID = '';
 let context = {};
-describe('MongoDB Test Suit', function init() {
+describe('MongoDB Test Suit', function initMongo() {
   this.beforeAll(async () => {
     context = await new Context(new MongoDB(MongoDB.connect(), Tool));
     const tool = await context.create(MOCK_UPDATE_TOOL);
