@@ -11,7 +11,7 @@ class MongoDBStrategy extends ContextStrategy {
     this.connection = connection;
   }
 
-  async create(item) {
+  async create(item = {}) {
     return this.model.create(item);
   }
 
@@ -19,11 +19,11 @@ class MongoDBStrategy extends ContextStrategy {
     return this.model.find(item);
   }
 
-  async update(id, item) {
+  async update(id = 0, item = {}) {
     return this.model.updateOne({ _id: id }, { $set: item });
   }
 
-  async delete(id) {
+  async delete(id = 0) {
     return this.model.deleteOne({ _id: id });
   }
 
