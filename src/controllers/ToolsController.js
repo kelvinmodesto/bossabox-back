@@ -17,8 +17,8 @@ class ToolsController {
   listTools() {
     this.router.get('/tools', async (req, res, next) => {
       try {
-        const { link, description, title } = req.query;
-        const list = await this.context.read({ link, description, title });
+        const { link = {}, description = {}, title = {} } = req.query;
+        const list = await this.context.read({ title, link, description });
         let result = list;
         if (req.query.tags) {
           result = list.filter(item => item.tags.reduce(
