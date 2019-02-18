@@ -12,7 +12,7 @@ describe('API GET Test Suit', function init() {
   this.beforeAll(async () => {
   });
   /*
-  * TODO: Fix get tool test case
+  * TODO: list all tools without params
   * */
   it('list tools', async () => {
     chai.request(app)
