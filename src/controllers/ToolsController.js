@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const RequestError = require('../utils/exception/RequestErrorException');
 
 class ToolsController {
@@ -17,17 +18,17 @@ class ToolsController {
   listTools() {
     this.router.get('/tools', async (req, res, next) => {
       try {
-        const { link = {}, description = {}, title = {} } = req.query;
-        const list = await this.context.read({ title, link, description });
-        let result = list;
+        const { link, description, title } = req.query;
+        const list = await this.context.read(_.pick({ link, description, title }));
+        let data = list;
         if (req.query.tags) {
-          result = list.filter(item => item.tags.reduce(
+          data = list.filter(item => item.tags.reduce(
             (acc, elem) => ((acc === true) || (acc === req.query.tags))
               || (elem === req.query.tags),
           ));
         }
         if (res.status(200)) {
-          res.send({ result });
+          res.send({ data });
         } else {
           throw new RequestError();
         }
