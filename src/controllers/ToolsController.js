@@ -28,7 +28,7 @@ class ToolsController {
           ));
         }
         if (res.status(200)) {
-          res.send({ data });
+          res.send(data);
         } else {
           throw new RequestError();
         }
