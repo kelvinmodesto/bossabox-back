@@ -18,7 +18,7 @@ describe('API GET Test Suit', function init() {
     chai.request(app)
       .get('/tools')
       .end((err, res) => {
-        expect([res.body]).to.be.a('array');
+        expect(res.body).to.be.a('array');
         expect(res.status).to.be.deep.equal(200);
       });
   });
