@@ -4,6 +4,10 @@ const chaiHttp = require('chai-http');
 
 const app = require('../../../../../app');
 
+const Context = require('../../../../db/strategies/base/contextStrategy');
+const MongoDB = require('../../../../db/strategies/mongodb/mongoDBStrategy');
+const { Tool } = require('../../../../models/tool');
+
 const { expect } = chai;
 
 const MOCK_DELETE_TOOL = {
@@ -23,9 +27,10 @@ const MOCK_DELETE_TOOL = {
 chai.use(chaiHttp);
 
 let MOCK_TOOL_ID = '';
-
+let context = {};
 describe('API DELETE Test Suit', function init() {
   this.beforeAll(async () => {
+    context = await new Context(new MongoDB(MongoDB.connect(), Tool));
     const tool = await context.create(MOCK_DELETE_TOOL);
     MOCK_TOOL_ID = tool._id;
   });
