@@ -1,7 +1,7 @@
-const _ = require('lodash');
-const RequestError = require('../utils/exception/RequestErrorException');
+import * as _ from 'lodash';
+import RequestError from '../utils/exception/RequestErrorException';
 
-class ToolsController {
+export default class ToolsController {
   constructor(router, context) {
     this.router = router;
     this.context = context;
@@ -80,5 +80,3 @@ class ToolsController {
     });
   }
 }
-
-module.exports = ToolsController;
