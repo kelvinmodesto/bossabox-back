@@ -1,7 +1,5 @@
-class RequestErrorException extends Error {
+export default class RequestErrorException extends Error {
   constructor() {
     super('Request Error');
   }
 }
-
-module.exports = RequestErrorException;
