@@ -2,7 +2,7 @@ const { describe } = require('mocha');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 
-const app = require('../../../../../app');
+const app = require('../../../../../../app');
 
 const { expect } = chai;
 
@@ -22,7 +22,7 @@ const MOCK_CREATE_TOOL = {
 
 chai.use(chaiHttp);
 
-describe('API PATCH Test Suit', function init() {
+describe('API PUT Test Suit', function init() {
   this.beforeAll(async () => {
   });
   it('update a tool', async () => {

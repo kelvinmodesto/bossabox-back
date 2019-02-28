@@ -1,10 +1,10 @@
 /* eslint-disable no-underscore-dangle */
-const { describe } = require('mocha');
-const { expect } = require('chai');
+import { describe } from 'mocha';
+import { expect } from 'chai';
 
-const Context = require('../../../../db/strategies/base/contextStrategy');
-const MongoDB = require('../../../../db/strategies/mongodb/mongoDBStrategy');
-const { Tool } = require('../../../../models/tool');
+import { Context } from '../../../../db/strategies/base/contextStrategy';
+import { MongoDB } from '../../../../db/strategies/mongodb/mongoDBStrategy';
+import { Tool } from '../../../../models/tool';
 
 const MOCK_CREATE_TOOL = {
   title: 'json-server',

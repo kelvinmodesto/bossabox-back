@@ -2,7 +2,7 @@ const { describe } = require('mocha');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 
-const app = require('../../../../../app');
+const app = require('../../../../../../app');
 
 const { expect } = chai;
 
@@ -22,10 +22,20 @@ const MOCK_CREATE_TOOL = {
 
 chai.use(chaiHttp);
 
-describe('API PUT Test Suit', function init() {
+describe('API POST Test Suit', function init() {
   this.beforeAll(async () => {
   });
-  it('update a tool', async () => {
+  /*
+  * TODO: Create tool test case
+  * */
+  it('create tools', async () => {
+    // chai.request(app)
+    //   .post('/tools')
+    //   .send(MOCK_CREATE_TOOL)
+    //   .end((err, res) => {
+    //     res.should.have.status(200);
+    //     res.body.should.be.a('object');
+    //   });
     chai.expect(1).to.be.equal(1);
   });
 });

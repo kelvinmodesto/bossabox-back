@@ -2,11 +2,11 @@ const { describe } = require('mocha');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 
-const app = require('../../../../../app');
+const app = require('../../../../../../app');
 
-const Context = require('../../../../db/strategies/base/contextStrategy');
-const MongoDB = require('../../../../db/strategies/mongodb/mongoDBStrategy');
-const { Tool } = require('../../../../models/tool');
+const Context = require('../../../../../db/strategies/base/contextStrategy');
+const MongoDB = require('../../../../../db/strategies/mongodb/mongoDBStrategy');
+const { Tool } = require('../../../../../models/tool');
 
 const { expect } = chai;
 
@@ -30,9 +30,7 @@ let MOCK_TOOL_ID = '';
 let context = {};
 describe('API DELETE Test Suit', function init() {
   this.beforeAll(async () => {
-    context = await new Context(new MongoDB(MongoDB.connect(), Tool));
-    const tool = await context.create(MOCK_DELETE_TOOL);
-    MOCK_TOOL_ID = tool._id;
+
   });
   it('delete tool', async () => {
     chai.expect(1).to.be.equal(1);
