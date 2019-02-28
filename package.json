@@ -13,7 +13,7 @@
     "start": "./node_modules/.bin/nodemon --exec babel-node ./bin/server.js",
     "lint": "./node_modules/.bin/eslint --ext .js",
     "lint:init": "./node_modules/.bin/eslint --init",
-    "test": "./node_modules/.bin/mocha --compilers js:@babel/register src/tests/**/*.spec.js",
+    "test": "./node_modules/.bin/mocha --require @babel/register src/tests/**/*.spec.js",
     "test:watch": "./node_modules/.bin/mocha -w src/tests/**/*.spec.js"
   },
   "dependencies": {
