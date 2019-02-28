@@ -1,4 +1,4 @@
-const IDb = require('./db.interface');
+import IDb from './db.interface';
 
 class ContextStrategy extends IDb {
   constructor(database) {
@@ -31,4 +31,4 @@ class ContextStrategy extends IDb {
   }
 }
 
-module.exports = ContextStrategy;
+export { ContextStrategy as Context };

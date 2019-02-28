@@ -1,10 +1,10 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const ContextStrategy = require('../base/contextStrategy');
+import { Context } from '../base/contextStrategy';
 
 const STR_CONNECTION = 'mongodb://admin:admin@localhost:27017/admin';
 
-class MongoDBStrategy extends ContextStrategy {
+class MongoDBStrategy extends Context {
   constructor(connection, model) {
     super();
     this.model = model;
@@ -41,4 +41,4 @@ class MongoDBStrategy extends ContextStrategy {
   }
 }
 
-module.exports = MongoDBStrategy;
+export { MongoDBStrategy as MongoDB };

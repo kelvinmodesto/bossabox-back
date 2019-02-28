@@ -1,6 +1,6 @@
-const NotImplementedException = require('../../../utils/exception/NotImplementedException');
+import NotImplementedException from '../../../utils/exception/NotImplementedException';
 
-class IDb {
+export default class IDb {
   create(item) {
     throw new NotImplementedException();
   }
@@ -21,5 +21,3 @@ class IDb {
     throw new NotImplementedException();
   }
 }
-
-module.exports = IDb;
