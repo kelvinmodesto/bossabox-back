@@ -1,9 +1,9 @@
-const createError = require('http-errors');
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+import createError from 'http-errors';
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
 
-const api = require('./src/api');
+import api from './src/api';
 
 const app = express();
 
@@ -31,4 +31,4 @@ app.use((err, req, res) => {
   res.render('error');
 });
 
-module.exports = app;
+export { app };
