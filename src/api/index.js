@@ -1,13 +1,13 @@
-const { Router } = require('express');
+import { Router } from 'express';
 
-const MongoDB = require('../db/strategies/mongodb/mongoDBStrategy');
-const Context = require('../db/strategies/base/contextStrategy');
+import { MongoDB } from '../db/strategies/mongodb/mongoDBStrategy';
+import { Context } from '../db/strategies/base/contextStrategy';
 
 // controllers list
-const ToolsController = require('../controllers/ToolsController');
+import ToolsController from '../controllers/ToolsController';
 
 // models list
-const { Tool } = require('../models/tool');
+import { Tool } from '../models/tool';
 
 // Put all models in a single object
 const models = { Tool };
@@ -21,4 +21,4 @@ const routersInit = () => {
   return toolsController.router;
 };
 
-module.exports = routersInit;
+export default routersInit;
