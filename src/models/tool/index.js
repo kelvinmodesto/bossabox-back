@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const { schema } = require('./schema');
+import mongoose from 'mongoose';
+import { schema } from './schema';
 
 const Tool = mongoose.model('tool', schema);
 
-module.exports = { Tool };
+export { Tool };
