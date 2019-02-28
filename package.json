@@ -14,7 +14,7 @@
     "lint": "./node_modules/.bin/eslint --ext .js",
     "lint:init": "./node_modules/.bin/eslint --init",
     "test": "./node_modules/.bin/mocha --require @babel/register src/tests/**/*.spec.js",
-    "test:watch": "./node_modules/.bin/mocha -w src/tests/**/*.spec.js"
+    "test:watch": "./node_modules/.bin/mocha --require @babel/register --watch --watch-extensions js src/tests/**/*.spec.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
