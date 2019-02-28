@@ -1,8 +1,8 @@
-const { describe } = require('mocha');
-const chai = require('chai');
-const chaiHttp = require('chai-http');
+import { describe } from 'mocha';
+import chai from 'chai';
+import chaiHttp from 'chai-http';
 
-const app = require('../../../../../../app');
+import { app } from '../../../../../../app';
 
 const { expect } = chai;
 

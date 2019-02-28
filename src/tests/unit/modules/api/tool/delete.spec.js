@@ -1,12 +1,12 @@
-const { describe } = require('mocha');
-const chai = require('chai');
-const chaiHttp = require('chai-http');
+import { describe } from 'mocha';
+import chai from 'chai';
+import chaiHttp from 'chai-http';
 
-const app = require('../../../../../../app');
+import { app } from '../../../../../../app';
 
-const Context = require('../../../../../db/strategies/base/contextStrategy');
-const MongoDB = require('../../../../../db/strategies/mongodb/mongoDBStrategy');
-const { Tool } = require('../../../../../models/tool');
+import { Context }  from '../../../../../db/strategies/base/contextStrategy';
+import { MongoDB } from '../../../../../db/strategies/mongodb/mongoDBStrategy';
+import { Tool } from '../../../../../models/tool';
 
 const { expect } = chai;
 
@@ -33,6 +33,6 @@ describe('API DELETE Test Suit', function init() {
 
   });
   it('delete tool', async () => {
-    chai.expect(1).to.be.equal(1);
+    expect(1).to.be.equal(1);
   });
 });
