@@ -1,6 +1,6 @@
 {
   "name": "bossabox-back",
-  "description": "A boilerplate application for building REST APIs using express, mongoose in ES6 with TDD",
+  "description": "An application for building REST APIs using express, mongoose in ES6 with TDD",
   "version": "0.0.1",
   "private": false,
   "engines": {
@@ -56,7 +56,11 @@
     "API",
     "REST",
     "web",
-    "router"
+    "router",
+    "babel",
+    "mongo",
+    "mongoose",
+    "strategy"
   ],
   "repository": {
     "type": "git",
