@@ -11,7 +11,7 @@
   "main": "./app.js",
   "scripts": {
     "start": "./node_modules/.bin/nodemon --exec babel-node ./bin/server.js",
-    "lint": "./node_modules/.bin/eslint --ext .js",
+    "lint": "./node_modules/.bin/eslint src/**/*.js",
     "lint:init": "./node_modules/.bin/eslint --init",
     "test": "./node_modules/.bin/mocha --require @babel/register src/tests/**/*.spec.js",
     "test:watch": "./node_modules/.bin/mocha --require @babel/register --watch --watch-extensions js src/tests/**/*.spec.js"

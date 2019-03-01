@@ -31,4 +31,4 @@ app.use((err, req, res) => {
   res.render('error');
 });
 
-export default app ;
+export default app;
