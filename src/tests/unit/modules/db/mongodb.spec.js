@@ -2,8 +2,8 @@
 import { describe } from 'mocha';
 import { expect } from 'chai';
 
-import { Context } from '../../../../db/strategies/base/contextStrategy';
-import { MongoDB } from '../../../../db/strategies/mongodb/mongoDBStrategy';
+import Context from '../../../../db/strategies/base/contextStrategy';
+import MongoDB from '../../../../db/strategies/mongodb/mongoDBStrategy';
 import { Tool } from '../../../../models/tool';
 
 const MOCK_CREATE_TOOL = {

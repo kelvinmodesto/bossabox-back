@@ -4,8 +4,8 @@ import chaiHttp from 'chai-http';
 
 import { app } from '../../../../../../app';
 
-import { Context }  from '../../../../../db/strategies/base/contextStrategy';
-import { MongoDB } from '../../../../../db/strategies/mongodb/mongoDBStrategy';
+import * as Context from '../../../../../db/strategies/base/contextStrategy';
+import * as MongoDB from '../../../../../db/strategies/mongodb/mongoDBStrategy';
 import { Tool } from '../../../../../models/tool';
 
 const { expect } = chai;
