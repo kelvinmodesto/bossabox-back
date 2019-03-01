@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
 
-import { Context } from '../base/contextStrategy';
+import Context from '../base/contextStrategy';
 
 const STR_CONNECTION = 'mongodb://admin:admin@localhost:27017/admin';
 
-class MongoDBStrategy extends Context {
+export default class MongoDBStrategy extends Context {
   constructor(connection, model) {
     super();
     this.model = model;
@@ -40,5 +40,3 @@ class MongoDBStrategy extends Context {
     return mongoose.connection;
   }
 }
-
-export { MongoDBStrategy as MongoDB };

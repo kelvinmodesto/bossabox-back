@@ -1,6 +1,6 @@
 import IDb from './db.interface';
 
-class ContextStrategy extends IDb {
+export default class ContextStrategy extends IDb {
   constructor(database) {
     super();
     this.database = database;
@@ -30,5 +30,3 @@ class ContextStrategy extends IDb {
     return this.database.connect();
   }
 }
-
-export { ContextStrategy as Context };
