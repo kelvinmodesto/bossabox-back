@@ -1,8 +1,9 @@
+/* eslint-disable no-underscore-dangle */
 import { describe } from 'mocha';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 
-import { app } from '../../../../../../app';
+import app from '../../../../../../app';
 
 const { expect } = chai;
 

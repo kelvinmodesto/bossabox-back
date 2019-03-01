@@ -1,12 +1,13 @@
+/* eslint-disable no-underscore-dangle */
 import { describe } from 'mocha';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 
-import { app } from '../../../../../../app';
+import app from '../../../../../../app';
 
 import * as Context from '../../../../../db/strategies/base/contextStrategy';
 import * as MongoDB from '../../../../../db/strategies/mongodb/mongoDBStrategy';
-import { Tool } from '../../../../../models/tool';
+import Tool from '../../../../../models/tool';
 
 const { expect } = chai;
 
