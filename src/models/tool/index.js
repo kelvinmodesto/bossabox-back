@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import { schema } from './schema';
+import schema from './schema';
 
 const Tool = mongoose.model('tool', schema);
 
-export { Tool };
+export default Tool;

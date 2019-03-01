@@ -7,7 +7,7 @@ import Context from '../db/strategies/base/contextStrategy';
 import ToolsController from '../controllers/ToolsController';
 
 // models list
-import { Tool } from '../models/tool';
+import Tool from '../models/tool';
 
 // Put all models in a single object
 const models = { Tool };

@@ -23,4 +23,4 @@ const schema = mongoose.Schema({
   },
 });
 
-export { schema };
+export default schema;
