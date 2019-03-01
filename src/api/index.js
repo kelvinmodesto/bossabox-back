@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
-import { MongoDB } from '../db/strategies/mongodb/mongoDBStrategy';
-import { Context } from '../db/strategies/base/contextStrategy';
+import MongoDB from '../db/strategies/mongodb/mongoDBStrategy';
+import Context from '../db/strategies/base/contextStrategy';
 
 // controllers list
 import ToolsController from '../controllers/ToolsController';
