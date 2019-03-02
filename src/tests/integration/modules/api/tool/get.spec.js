@@ -1,17 +1,13 @@
 /* eslint-disable no-underscore-dangle */
 import { describe } from 'mocha';
-import chai from 'chai';
-import chaiHttp from 'chai-http';
+import { expect } from 'chai';
+import request from 'supertest';
 
 import app from '../../../../../../app';
 
-const { expect } = chai;
-
-chai.use(chaiHttp);
-
-describe('API GET Test Suit', function init() {
+describe('API GET Test Suit', () => {
   it('list tools', async () => {
-    chai.request(app)
+    request(app)
       .get('/tools')
       .end((err, res) => {
         expect(res.body).to.be.a('array');

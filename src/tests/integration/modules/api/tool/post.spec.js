@@ -1,6 +1,6 @@
 import { describe } from 'mocha';
 import chai from 'chai';
-import chaiHttp from 'chai-http';
+import request from 'supertest';
 
 import app from '../../../../../../app';
 
@@ -19,8 +19,6 @@ const MOCK_CREATE_TOOL = {
     'rest',
   ],
 };
-
-chai.use(chaiHttp);
 
 describe('API POST Test Suit', function init() {
   it('create tools', async () => {

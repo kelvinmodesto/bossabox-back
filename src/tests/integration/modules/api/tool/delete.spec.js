@@ -1,12 +1,12 @@
 /* eslint-disable no-underscore-dangle */
 import { describe } from 'mocha';
 import chai from 'chai';
-import chaiHttp from 'chai-http';
+import request from 'supertest';
 
 import app from '../../../../../../app';
 
-import * as Context from '../../../../../db/strategies/base/contextStrategy';
-import * as MongoDB from '../../../../../db/strategies/mongodb/mongoDBStrategy';
+import Context from '../../../../../db/strategies/base/contextStrategy';
+import MongoDB from '../../../../../db/strategies/mongodb/mongoDBStrategy';
 import Tool from '../../../../../models/tool';
 
 const { expect } = chai;
@@ -25,15 +25,20 @@ const MOCK_DELETE_TOOL = {
   ],
 };
 
-chai.use(chaiHttp);
-
 let MOCK_TOOL_ID = '';
 let context = {};
 describe('API DELETE Test Suit', function init() {
   this.beforeAll(async () => {
-
+    context = await new Context(new MongoDB(MongoDB.connect(), Tool));
+    const tool = await context.create(MOCK_DELETE_TOOL);
+    MOCK_TOOL_ID = tool._id;
   });
-  it('delete tool', async () => {
-    expect(1).to.be.equal(1);
+  it('delete tool by id', async () => {
+    request(app)
+      .del(`/tools/${MOCK_TOOL_ID}`)
+      .end((err, res) => {
+        expect(res.body).to.be.a('object');
+        expect(res.status).to.be.deep.equal(200);
+      });
   });
 });
