@@ -68,11 +68,9 @@ export default class ToolsController {
   deleteTool() {
     this.router.delete('/tools/:id', async (req, res, next) => {
       try {
-        const { n } = await this.context.delete(req.id);
+        const { n } = await this.context.delete(req.params.id);
         if (n === 1) {
           res.send({});
-        } else {
-          throw new RequestError();
         }
       } catch (error) {
         next(error);
