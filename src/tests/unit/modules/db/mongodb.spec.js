@@ -98,7 +98,7 @@ describe('MongoDB Test Suit', function initMongo() {
       .equal(1);
   });
 
-  it('Delete item', async () => {
+  it('Delete item by id', async () => {
     const res = await context.delete(MOCK_TOOL_ID);
     expect(res.n)
       .to
