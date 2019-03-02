@@ -19,11 +19,11 @@ export default class MongoDBStrategy extends Context {
     return this.model.find(item);
   }
 
-  async update(id = 0, item = {}) {
+  async update(id, item = {}) {
     return this.model.updateOne({ _id: id }, { $set: item });
   }
 
-  async delete(id = 0) {
+  async delete(id) {
     return this.model.deleteOne({ _id: id });
   }
 
