@@ -1,21 +1,15 @@
-#!/usr/bin/env node
-
 /**
  * Module dependencies.
  */
 import debug from 'debug';
 import http from 'http';
-
 import app from '../app';
-
-let addr = {};
-let port = 0;
 
 /**
  * Normalize a port into a number, string, or false.
  */
 function normalizePort(val) {
-  port = parseInt(val, 10);
+  const port = parseInt(val, 10);
 
   if (Number.isNaN(port)) {
     // named pipe
@@ -33,13 +27,8 @@ function normalizePort(val) {
 /**
  * Get port from environment and store in Express.
  */
-port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
-
-/**
- * Create HTTP server.
- */
-const server = http.createServer(app);
 
 /**
  * Event listener for HTTP server "error" event.
@@ -67,10 +56,15 @@ function onError(error) {
 }
 
 /**
+ * Create HTTP server.
+ */
+const server = http.createServer(app);
+
+/**
  * Event listener for HTTP server "listening" event.
  */
 function onListening() {
-  addr = server.address();
+  const addr = server.address();
 
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
   debug(`Listening on ${bind}`);
