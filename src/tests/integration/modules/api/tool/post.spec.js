@@ -1,10 +1,7 @@
 import { describe } from 'mocha';
-import chai from 'chai';
 import request from 'supertest';
 
 import app from '../../../../../../app';
-
-const { expect } = chai;
 
 const MOCK_CREATE_TOOL = {
   title: 'json-server',
@@ -20,15 +17,11 @@ const MOCK_CREATE_TOOL = {
   ],
 };
 
-describe('API POST Test Suit', function init() {
-  it('create tools', async () => {
-    // await chai.request(app)
-    //   .post('/tools')
-    //   .send(MOCK_CREATE_TOOL)
-    //   .end((err, res) => {
-    //     res.should.have.status(200);
-    //     res.body.should.be.a('object');
-    //   });
-    expect(1).to.be.equal(1);
+describe('API POST Test Suit', () => {
+  it('create tool', async () => {
+    await request(app)
+      .post('/tools')
+      .send(MOCK_CREATE_TOOL)
+      .expect(200);
   });
 });
