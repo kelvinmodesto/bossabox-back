@@ -47,7 +47,7 @@ export default class ToolsController {
           description,
           tags,
           _id,
-        } = await this.context.create(req.query);
+        } = await this.context.create(req.body);
         if (res.status(200)) {
           res.send({
             title,
