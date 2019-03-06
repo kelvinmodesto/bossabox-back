@@ -88,3 +88,6 @@ deploy.sh
 
 # Docker scripts
 ./mongo.sh
+
+# API Blueprint docs
+./index.html
