@@ -20,7 +20,7 @@ const MOCK_TOOL = {
 };
 
 describe('API GET Test Suit', () => {
-  it('list all tools', async () => {
+  it('list all tools', () => {
     request(app)
       .get('/tools')
       .end((err, res) => {
@@ -28,7 +28,7 @@ describe('API GET Test Suit', () => {
         expect(res.status).to.be.deep.equal(200);
       });
   });
-  it('list tools filtering by a title property', async () => {
+  it('list tools filtering by a title property', () => {
     request(app)
       .get(`/tools?title=${MOCK_TOOL.title}`)
       .end((err, res) => {
@@ -36,7 +36,7 @@ describe('API GET Test Suit', () => {
         expect(res.status).to.be.deep.equal(200);
       });
   });
-  it('list tools filtering by a link property', async () => {
+  it('list tools filtering by a link property', () => {
     request(app)
       .get(`/tools?link=${MOCK_TOOL.link}`)
       .end((err, res) => {
@@ -44,7 +44,7 @@ describe('API GET Test Suit', () => {
         expect(res.status).to.be.deep.equal(200);
       });
   });
-  it('list tools filtering by a description property', async () => {
+  it('list tools filtering by a description property', () => {
     request(app)
       .get(`/tools?description=${MOCK_TOOL.description}`)
       .end((err, res) => {
@@ -52,7 +52,7 @@ describe('API GET Test Suit', () => {
         expect(res.status).to.be.deep.equal(200);
       });
   });
-  it('list tools filtering by a item in tags list', async () => {
+  it('list tools filtering by a item in tags list', () => {
     request(app)
       .get(`/tools?tags=${MOCK_TOOL.tags[0]}`)
       .end((err, res) => {
