@@ -1,6 +1,6 @@
 ## About 
 
-Aqui podemos descrever detalhes que são comuns a todos os serviços como formatos, headers, tipos de erros, etc
+Here we can describe details that are common to all services like formats, headers, types of errors, etc.
 
 ## Configuring project
 
@@ -20,20 +20,20 @@ yarn
 docker pull mongo
 ```
 
-Agora criando os conteiners do mongo e do seu respectivo cliente
+Create a mongodb container
 
 ```sh
 docker run  --name mongodb -p 27017:27017  -e MONGO_INITDB_ROOT_USERNAME="admin"  -e MONGO_INITDB_ROOT_PASSWORD="admin"  -d
  mongo
 ```
 
-Para finalizar, executa os conteiners e configura o  mongo
+Execute mongodb container
 
 ```sh
 docker exec -it mongodb mongo --host localhost -u "admin" -p "admin" --authenticationDatabase admin 
 ```
 
-Dentro do mongo, executa esses dois comandos
+Using mongo, choose database and create a new collection for the application
 ```sh
 use admin 
 ```
@@ -42,7 +42,7 @@ use admin
 db.createCollection("tools") 
 ```
 
-Com isso, o mongo vai executar na porta 27017.
+The Database is listening 27017 port number
 
 ### Running project
 ```sh
@@ -56,3 +56,5 @@ The project is listening 3000 port number
 npm run docs 
 ```
 ### Open index.html file and read API Documentation
+
+### Open challenges.md for read possible future challenges.
