@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import jwt from 'jsonwebtoken';
+
 import RequestError from '../utils/exception/RequestErrorException';
 
 export default class ToolsController {
