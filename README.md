@@ -48,6 +48,11 @@ Com isso, o mongo vai executar na porta 27017.
 ```sh
 npm run start 
 ```
+
 The project is listening 3000 port number
 
+### Generate the API documentation
+```sh
+npm run docs 
+```
 ### Open index.html file and read API Documentation
