@@ -2,50 +2,51 @@
 
 # Group API
 
-## About [/]
-
+API for a simple repository for selecting tools with their names, links, descriptions and tags.
 
 # Group Tools
 
-## Tool [/tools]
-
-### Create tool [POST]
-
-+ Request  Create tool
-    + Headers
-
-        Accept: application/json
-        Content-Type: application/json
-    + Attributes (Tool)
-
-+ Response 201 (application/json)
-    + Attributes (Created)
+## Tools [/tools]
 
 ### List tools [GET]
++ Request List tools
+      + Headers
 
- + Headers
-
-        Accept: application/json
-        Content-Type: application/json
-    + Attributes (Tool)
+            Accept: application/json
+            Content-Type: application/json
+      + Attributes (ParamTool)
 
 + Response 200 (application/json)
     + Attributes (array[Tool])
 
-+ Response 404 (application/json)
++ Response 400 (application/json)
     + Attributes (Error)
+
+### Create tool [POST]
+
++ Request  Create tool
+      + Headers
+
+            Accept: application/json
+            Content-Type: application/json
+      + Attributes (Tool)
+
++ Response 200 (application/json)
+    + Attributes (NewTool)
+
++ Response 400 (application/json)
+    + Attributes (Error)
+
+
+## Tool by id [/tools/:id]
 
 ### Delete tool [DELETE]
 
-+ Request Delete tool
-    + Headers
++ Response 200 (application/json)
+    + Attributes (Return)
 
-        Accept: application/json
-        Content-Type: application/json
-    + Attributes (number)
-
-+ Response 201 (application/json)
-    + Attributes ({})
++ Response 400 (application/json)
+    + Attributes (Error)
 
 # Data Structures
 
@@ -54,13 +55,31 @@
 + link (string) - tool link name
 + description (string) - tool description name
 + tags (array[string]) - list of tags names
-+ insertedAt (date) - date of insert
++ insertedAt (string) - date of insert
 + _id (number) - auto-generated tool id
+
+## ParamTool (object)
++ title (string) - tool title name
++ link (string) - tool link name
++ description (string) - tool description name
++ tags (string) - item list of tags names
+
+## NewTool (object)
++ title (string) - tool title name
++ link (string) - tool link name
++ description (string) - tool description name
++ tags (array[string]) - list of tags names
++ insertedAt (string) - date of insert
++ id (number) - auto-generated tool id
+
+## Id (object)
++ id (number) - Id a ser processado
+
+## Return (object)
 
 ## Error (object)
 + code: 400 (number) - Status code
 + message (string) - Status message
-+ description (string) - Status description
 
 ## Created (object)
 + resultado (string) - Success message

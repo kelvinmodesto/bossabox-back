@@ -1,20 +1,20 @@
-## Sobre 
+## About 
 
 Aqui podemos descrever detalhes que são comuns a todos os serviços como formatos, headers, tipos de erros, etc
 
-## Configurando Projeto
+## Configuring project
 
-Instale yarn:
+Install yarn:
 ```
 npm install -g yarn
 ```
 
-Instale os pacotes:
+Install packages:
 ```sh
 yarn
 ```
 
-### Configurando o banco pelo Docker
+### Configuring Database
 
 ```sh
 docker pull mongo
@@ -44,10 +44,10 @@ db.createCollection("tools")
 
 Com isso, o mongo vai executar na porta 27017.
 
-### Executando o projeto
+### Running project
 ```sh
 npm run start 
 ```
-O projeto vai estar executando na porta 3000
+The project is listening 3000 port number
 
-### Abrindo o index.html ou api.apib e veja o descritivo da API
+### Open index.html file and read API Documentation
