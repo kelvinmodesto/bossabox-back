@@ -90,4 +90,4 @@ deploy.sh
 ./mongo.sh
 
 # API Blueprint docs
-./index.html
+index.html
