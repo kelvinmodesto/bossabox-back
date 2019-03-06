@@ -55,6 +55,6 @@ The project is listening 3000 port number
 ```sh
 npm run docs 
 ```
-### Open index.html file and read API Documentation
+Open index.html file and read API Documentation
 
-### Open challenges.md for read possible future challenges.
+Open challenges.md for read possible future challenges.
