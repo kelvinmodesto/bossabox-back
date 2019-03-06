@@ -1,0 +1,66 @@
+# API Tools
+
+# Group API
+
+## About [/]
+
+
+# Group Tools
+
+## Tool [/tools]
+
+### Create tool [POST]
+
++ Request  Create tool
+    + Headers
+
+        Accept: application/json
+        Content-Type: application/json
+    + Attributes (Tool)
+
++ Response 201 (application/json)
+    + Attributes (Created)
+
+### List tools [GET]
+
+ + Headers
+
+        Accept: application/json
+        Content-Type: application/json
+    + Attributes (Tool)
+
++ Response 200 (application/json)
+    + Attributes (array[Tool])
+
++ Response 404 (application/json)
+    + Attributes (Error)
+
+### Delete tool [DELETE]
+
++ Request Delete tool
+    + Headers
+
+        Accept: application/json
+        Content-Type: application/json
+    + Attributes (number)
+
++ Response 201 (application/json)
+    + Attributes ({})
+
+# Data Structures
+
+## Tool (object)
++ title (string) - tool title name
++ link (string) - tool link name
++ description (string) - tool description name
++ tags (array[string]) - list of tags names
++ insertedAt (date) - date of insert
++ _id (number) - auto-generated tool id
+
+## Error (object)
++ code: 400 (number) - Status code
++ message (string) - Status message
++ description (string) - Status description
+
+## Created (object)
++ resultado (string) - Success message
